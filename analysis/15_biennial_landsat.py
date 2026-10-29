@@ -2,7 +2,7 @@
 
 For each even year: the median of cloud-free dry-season (May to September) Landsat surface reflectance scenes, as a
 natural-colour composite (red, green, blue) and as NDBI, at 30 m on the 20 x 14 km map frame (UTM 36S). Landsat 5 TM
-is used to 2011, Landsat 7 ETM+ for 2012 (SLC-off gaps filled by the median, then by the adjacent dry seasons), and
+is used to 2011 except 2002 (no scenes; Landsat 7 ETM+ before its scan-line fault), Landsat 7 ETM+ for 2012 (SLC-off gaps filled by the median, then by the adjacent dry seasons), and
 Landsat 8 and 9 OLI from 2013. Where a pixel has no clear scene in the year, the composite of the year before and
 after fills it. Draws two portrait small-multiple figures (19 panels each).
 Usage: python analysis/15_biennial_landsat.py --project YOUR_EARTH_ENGINE_PROJECT
@@ -30,7 +30,7 @@ def sr(col, bands):
         qa = img.select('QA_PIXEL')
         clear = qa.bitwiseAnd(1 << 3).eq(0).And(qa.bitwiseAnd(1 << 4).eq(0)).And(qa.bitwiseAnd(1 << 1).eq(0))
         out = img.select(bands, ['blue', 'green', 'red', 'nir', 'swir1']).multiply(0.0000275).add(-0.2).updateMask(clear)
-        return out.copyProperties(img, ['system:time_start'])  # arithmetic drops the date, which the dry-season filter needs
+        return out.copyProperties(img, ['system:time_start', 'CLOUD_COVER'])  # arithmetic drops the date, which the dry-season filter needs
     return col.map(prep)
 
 L5 = sr(ee.ImageCollection('LANDSAT/LT05/C02/T1_L2'), ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5'])
@@ -39,11 +39,15 @@ L89 = sr(ee.ImageCollection('LANDSAT/LC08/C02/T1_L2').merge(ee.ImageCollection('
          ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6'])
 
 def collection(y):
-    return L5 if y <= 2011 else (L7 if y == 2012 else L89)
+    # Landsat 5 has no dry-season scenes over the area in 2002, so Landsat 7 (before its 2003 scan-line fault) is used
+    return L7 if y in (2002, 2012) else (L5 if y <= 2011 else L89)
 
 def composite(y):
-    dry = lambda c, a, b: c.filterBounds(AOI).filterDate(f'{a}-05-01', f'{b}-10-01').filter(ee.Filter.calendarRange(5, 9, 'month'))
+    dry = lambda c, a, b: (c.filterBounds(AOI).filterDate(f'{a}-05-01', f'{b}-10-01')
+                           .filter(ee.Filter.calendarRange(5, 9, 'month')).filter(ee.Filter.lt('CLOUD_COVER', 40)))
     one = dry(collection(y), y, y).median()
+    if y >= 2013:  # Landsat 8 and 9 give 30 to 40 clear dry-season scenes a year; a 3-year stack exceeds Earth Engine memory
+        return one
     three = dry(collection(y - 1).merge(collection(y)).merge(collection(y + 1)), y - 1, y + 1).median()
     return one.unmask(three)
 
@@ -87,7 +91,7 @@ for y in YEARS:
     a, e = rgbs[y]
     img = np.clip((np.moveaxis(a, 0, -1) - lo) / (hi - lo), 0, 1) ** 0.8          # gamma lifts the dark miombo
     img = np.where(np.isfinite(img), img, 1.0)
-    sensor = 'TM' if y <= 2011 else ('ETM+' if y == 2012 else 'OLI')
+    sensor = 'ETM+' if y in (2002, 2012) else ('TM' if y <= 2011 else 'OLI')
     P.append((f'{y}', img, e, f'Landsat {sensor}'))
 all_years('biennial_landsat_rgb', P, None, None, None, ncols=4, rgb=True)
 

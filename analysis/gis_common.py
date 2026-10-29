@@ -98,8 +98,8 @@ def read(name):
 def crop(a, ext):
     """Cut a window raster to the map extent; returns (array, extent)."""
     res = (ext[1] - ext[0]) / a.shape[1]
-    c0 = int((EXTENT[0] - ext[0]) // res); c1 = int(np.ceil((EXTENT[1] - ext[0]) / res))
-    r0 = int((ext[3] - EXTENT[3]) // res); r1 = int(np.ceil((ext[3] - EXTENT[2]) / res))
+    c0 = max(0, int((EXTENT[0] - ext[0]) // res)); c1 = min(a.shape[1], int(np.ceil((EXTENT[1] - ext[0]) / res)))
+    r0 = max(0, int((ext[3] - EXTENT[3]) // res)); r1 = min(a.shape[0], int(np.ceil((ext[3] - EXTENT[2]) / res)))  # clamp: a grid snapped inside the frame must not wrap
     return a[r0:r1, c0:c1], [ext[0] + c0 * res, ext[0] + c1 * res, ext[3] - r1 * res, ext[3] - r0 * res]
 
 def mask(geom, arr, ext):
