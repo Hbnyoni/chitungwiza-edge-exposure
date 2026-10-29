@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this code or data, please cite the archived release and the associated article."
 title: "Growing at the edge: Chitungwiza peri-urban expansion, roads and PM2.5 exposure: code and derived data"
 version: 1.0.0
+doi: 10.5281/zenodo.23764046
 date-released: 2026-10-29
 license: MIT
 repository-code: "https://github.com/Hbnyoni/chitungwiza-edge-exposure"

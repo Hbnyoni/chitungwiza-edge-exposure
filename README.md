@@ -1,5 +1,7 @@
 # Growing at the edge: Chitungwiza peri-urban expansion, roads and PM2.5 exposure
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23764046.svg)](https://doi.org/10.5281/zenodo.23764046)
+
 Code and derived data for *Growing at the edge: unplanned peri-urban expansion, unpaved roads and fine particulate matter exposure in Chitungwiza, Zimbabwe, 1990 to 2025*
 
 The study follows Chitungwiza district (25 wards) and the 3 km band outside its boundary from 1990 to 2025 with open
@@ -68,7 +70,7 @@ Road statistics derived from OpenStreetMap are also subject to the ODbL.
 Please cite the archived release and the associated article:
 
 Nyoni, H. B., Moyo, P. L., Chinwadzimba, Z., Sibanda, R., & Tigere, D. (2026). *Growing at the edge: Chitungwiza peri-urban expansion, roads and PM2.5 exposure: code and derived data*
-(Version 1.0.0) [Computer software]. Zenodo. (DOI assigned by Zenodo on release)
+(Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23764046
 
 ## Contact
 
