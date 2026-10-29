@@ -1,0 +1,46 @@
+{
+  "title": "Growing at the edge: Chitungwiza peri-urban expansion, roads and PM2.5 exposure: code and derived data",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "description": "Python code and derived ward-level datasets for an open-data assessment of peri-urban growth, road surfaces and PM2.5 exposure in Chitungwiza, Zimbabwe, and the 3 km band around it, 1990 to 2025, with exposure compared against the 2021 WHO guidelines and attributable mortality. Inputs are public GHSL, Google Open Buildings Temporal, Landsat, WorldPop, V5.GL.04 and GHAP PM2.5, OpenStreetMap history, geoBoundaries and World Bank data; raster extracts are reacquired with the supplied code.",
+  "creators": [
+    {
+      "name": "Nyoni, Handsome Bongani",
+      "affiliation": "Midlands State University; University of Cape Town"
+    },
+    {
+      "name": "Moyo, Perez Livias",
+      "affiliation": "National University of Science and Technology, Zimbabwe"
+    },
+    {
+      "name": "Chinwadzimba, Zororo",
+      "affiliation": "Centre for Sexual Health and HIV AIDS Research (CeSHHAR)"
+    },
+    {
+      "name": "Sibanda, Rutendo",
+      "affiliation": "Centre for Sexual Health and HIV AIDS Research (CeSHHAR)"
+    },
+    {
+      "name": "Tigere, Daniel",
+      "affiliation": "Shurugwi District Medical Office"
+    }
+  ],
+  "keywords": [
+    "PM2.5",
+    "urban growth",
+    "informal settlements",
+    "unpaved roads",
+    "WHO guidelines",
+    "Chitungwiza",
+    "Zimbabwe"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23342801",
+      "relation": "isSupplementedBy",
+      "scheme": "doi"
+    }
+  ]
+}

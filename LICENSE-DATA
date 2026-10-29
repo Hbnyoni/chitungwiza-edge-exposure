@@ -1,0 +1,18 @@
+Derived data and figures
+
+The derived tables in results/, the verification records in qa/, the analysis
+plans and compiled health functions in evidence/, and the figures in figures/
+were created by Handsome Bongani Nyoni, Perez Livias Moyo, Zororo Chinwadzimba,
+Rutendo Sibanda and Daniel Tigere and are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Third-party inputs keep their original licences and attribution requirements:
+- GHAP PM2.5 (Wei et al., 2023): see the publisher's terms.
+- ACAG V6.GL.02 PM2.5 (Shen et al., 2024): see the publisher's terms.
+- WorldPop Global2 R2025A v1: CC BY 4.0.
+- geoBoundaries gbOpen Zimbabwe (ZIMSTAT/OCHA): CC BY 3.0 IGO.
+- OpenStreetMap locator tiles: © OpenStreetMap contributors, ODbL 1.0.
+- Natural Earth country outlines: public domain.
+Published concentration–response coefficients in evidence/ are reproduced
+from the cited studies for verification and remain attributable to them.

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+data/rasters/
+data/ohsome/
+data/osm/
+data/ee_cache/
+figures/
+manuscript/

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the archived release and the associated article."
+title: "Growing at the edge: Chitungwiza peri-urban expansion, roads and PM2.5 exposure: code and derived data"
+version: 1.0.0
+date-released: 2026-10-29
+license: MIT
+repository-code: "https://github.com/Hbnyoni/chitungwiza-edge-exposure"
+type: software
+authors:
+  - family-names: Nyoni
+    given-names: Handsome Bongani
+    affiliation: "Midlands State University; University of Cape Town"
+  - family-names: Moyo
+    given-names: Perez Livias
+    affiliation: "National University of Science and Technology, Zimbabwe"
+  - family-names: Chinwadzimba
+    given-names: Zororo
+    affiliation: "Centre for Sexual Health and HIV AIDS Research (CeSHHAR)"
+  - family-names: Sibanda
+    given-names: Rutendo
+    affiliation: "Centre for Sexual Health and HIV AIDS Research (CeSHHAR)"
+  - family-names: Tigere
+    given-names: Daniel
+    affiliation: "Shurugwi District Medical Office"
+keywords:
+  - PM2.5
+  - urban growth
+  - informal settlements
+  - unpaved roads
+  - WHO air quality guidelines
+  - Chitungwiza
+  - Zimbabwe
+  - Google Earth Engine

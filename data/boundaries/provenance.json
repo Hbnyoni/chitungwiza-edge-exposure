@@ -1,0 +1,14 @@
+{
+  "ADM1": {
+    "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM1/geoBoundaries-ZWE-ADM1.geojson",
+    "sha256": "4a84368bb234ab67e4285c7f4f5d2e460332629b843ac480fa380f49d9753f11"
+  },
+  "ADM2": {
+    "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM2/geoBoundaries-ZWE-ADM2.geojson",
+    "sha256": "074a3632634b9448bb4043580fe7199e0b2f64ec68bd2f98932a2c68b3795b88"
+  },
+  "ADM3": {
+    "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/ZWE/ADM3/geoBoundaries-ZWE-ADM3.geojson",
+    "sha256": "2ea89c8a8628e2a07e0aeb770dde98195d0d231bb6765fd8ef45845876584bd3"
+  }
+}
